@@ -1,0 +1,16 @@
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .video-card {
+    width: 320px;
+  }
+  
+  .video-player {
+    width: 100%;
+    height: auto;
+  }
+  

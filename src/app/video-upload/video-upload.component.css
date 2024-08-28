@@ -1,0 +1,53 @@
+/* mat-card {
+    max-width: 600px;
+    margin: 24px auto;
+    padding: 24px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+  }
+   */
+
+   .upload-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .file-upload {
+    margin: 20px 0;
+  }
+  
+  .file-upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .file-upload-label:hover {
+    background-color: #115293;
+  }
+  
+  #file-upload {
+    display: none;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+  }
+  

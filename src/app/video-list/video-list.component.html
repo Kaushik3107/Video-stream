@@ -1,0 +1,7 @@
+<div class="video-container">
+  <mat-card *ngFor="let video of videos" class="video-card">
+    <video controls [src]="video.filePath" class="video-player"></video>
+    <mat-card-title>{{ video.title }}</mat-card-title>
+    <mat-card-content>{{ video.description }}</mat-card-content>
+  </mat-card>
+</div>

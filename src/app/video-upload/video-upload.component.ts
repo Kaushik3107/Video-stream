@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { VideoService } from '../services/video.service';
 
 @Component({
   selector: 'app-video-upload',
@@ -13,7 +14,11 @@ export class VideoUploadComponent {
   description: string = '';
   selectedFile: File | null = null;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private videoService: VideoService
+  ) {}
 
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -29,17 +34,15 @@ export class VideoUploadComponent {
       formData.append('description', this.description);
       formData.append('video', this.selectedFile, this.selectedFile.name);
 
-      this.http
-        .post('https://your-api-url.com/api/videos', formData)
-        .subscribe({
-          next: (response) => {
-            console.log('Video uploaded successfully:', response);
-            this.router.navigate(['/videos']); // Redirect to video listing or another component
-          },
-          error: (err) => {
-            console.error('Video upload failed:', err);
-          },
-        });
+      this.videoService.uploadVideo(formData).subscribe({
+        next: (response) => {
+          console.log('Video uploaded successfully:', response);
+          this.router.navigate(['/videos']); // Redirect to video listing or another component
+        },
+        error: (err) => {
+          console.error('Video upload failed:', err);
+        },
+      });
     }
   }
   // videoUploadForm: FormGroup;

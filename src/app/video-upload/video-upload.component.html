@@ -24,13 +24,11 @@
 <div class="upload-container">
   <h2>Upload Video</h2>
   <form (ngSubmit)="onSubmit()" #videoForm="ngForm">
-    <!-- Title Field -->
     <mat-form-field appearance="fill">
       <mat-label>Title</mat-label>
       <input matInput type="text" [(ngModel)]="title" name="title" required />
     </mat-form-field>
 
-    <!-- Description Field -->
     <mat-form-field appearance="fill">
       <mat-label>Description</mat-label>
       <textarea
@@ -41,7 +39,6 @@
       ></textarea>
     </mat-form-field>
 
-    <!-- File Input for Video Upload -->
     <div class="file-upload">
       <label for="file-upload" class="file-upload-label">Choose file</label>
       <input
@@ -53,7 +50,6 @@
       />
     </div>
 
-    <!-- Submit Button -->
     <button
       mat-raised-button
       color="primary"
